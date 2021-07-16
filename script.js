@@ -21,13 +21,16 @@ button.addEventListener("click", function () {
         }
     }
 
+    const letters = document.getElementById("lettersDiv");
+    letters.innerText = '';
+
     for (let letter in letterCounts) {
         const span = document.createElement("span");
         const textContent = `"${letter}" : ${letterCounts[letter]}, `;
         span.innerText = textContent;
-        const letters = document.getElementById("lettersDiv");
         letters.appendChild(span);
     }
+    
 
     const wordCounts = {};
 
@@ -42,11 +45,13 @@ button.addEventListener("click", function () {
         }
     }
 
+    const cWords = document.getElementById("wordsDiv");
+    cWords.innerText = ''
+
     for (let word in wordCounts) {
         const span = document.createElement("span");
         const textContent = `"${word}" : ${wordCounts[word]}, `;
         span.innerText = textContent;
-        const cWords = document.getElementById("wordsDiv");
         cWords.appendChild(span);
     }
 });
